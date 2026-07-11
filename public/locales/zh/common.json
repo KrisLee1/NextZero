@@ -1,0 +1,110 @@
+{ 
+  "language-select": {
+    "search-lang": "搜索语言",
+    "no-found": "未找到语言"
+  },
+  "theme-select": {
+    "search-theme": "搜索主题",
+    "no-found": "未找到主题"
+  },
+  "theme-mode-toggle": {
+    "auto": "自动",
+    "light": "浅色",
+    "dark": "深色"
+  },
+  "landing": {
+    "navigation": "主导航",
+    "nav": { "features": "功能", "workflow": "使用方式", "demo": "实时演示", "docs": "文档" },
+    "controls": { "mode": "颜色模式" },
+    "eyebrow": "Next.js 多语言与主题启动模板",
+    "hero": {
+      "title": "用多语言与主题能力，快速启动你的 Next.js 项目。",
+      "description": "NextZero 是一个可直接运行的 Next.js 模板，展示多语言、主题预设与外观偏好的完整接入方式。具体支持哪些语言、采用什么设计令牌，都由开发者按产品需求自定义扩展。",
+      "primaryCta": "阅读文档",
+      "secondaryCta": "查看 GitHub"
+    },
+    "stats": [
+      { "value": "i18n", "label": "语言按产品需求适配" },
+      { "value": "26", "label": "可选主题预设" },
+      { "value": "3", "label": "外观偏好：跟随系统、浅色、深色" }
+    ],
+    "demo": {
+      "kicker": "当前配置预览",
+      "title": "在一个界面中查看语言、主题与模式",
+      "progressStart": "当前设置", "progressEnd": "可随时调整",
+      "language": "语言", "languages": "按产品需要配置与扩展", "theme": "主题"
+    },
+    "features": {
+      "eyebrow": "开箱即用的基础能力",
+      "title": "先搭好偏好设置，再专注产品本身。",
+      "description": "将语言切换、主题令牌和颜色模式从项目第一天纳入统一配置，减少后续重复建设。",
+      "items": [
+        { "title": "多语言能力", "description": "提供语言配置、文案资源、浏览器语言识别和界面切换能力；支持的语言由产品自行定义。" },
+        { "title": "主题预设", "description": "选择主题后，颜色、边框、阴影和圆角等设计令牌会统一更新。" },
+        { "title": "可扩展的基础", "description": "基于语义化令牌、可访问组件和响应式默认值，便于替换或补充自己的设计系统。" }
+      ]
+    },
+    "workflow": {
+      "eyebrow": "从模板到产品",
+      "title": "用清晰的配置开始，而不是从零搭建。",
+      "description": "先确定语言、主题和模式的默认行为，再把精力投入真正区分产品的功能与体验。",
+      "cta": "回到切换控件",
+      "steps": [
+        { "title": "选择主题与模式", "description": "从合适的主题预设开始，并设置自动、浅色或深色作为默认模式。" },
+        { "title": "补充产品文案", "description": "在对应语言文件中维护产品文案，让功能和本地化内容同步演进。" },
+        { "title": "扩展产品体验", "description": "在既有配置之上开发页面和功能，同时保留一致的语言与视觉偏好体验。" }
+      ]
+    },
+    "footer": "一个为 Next.js 项目预置语言、主题与颜色模式的可复用界面起点。",
+    "footerItems": { "i18n": "支持国际化", "theme": "支持主题", "system": "适配系统" }
+  },
+  "docs": {
+    "navigation": "文档目录",
+    "backHome": "返回首页",
+    "mode": "主题模式",
+    "badge": "模板文档",
+    "title": "NextZero 使用指南",
+    "introduction": "NextZero 把多语言、主题预设和浅深色模式预先组合在一起。下面的内容说明如何直接使用、定制组件，以及把它扩展为自己的设计系统。",
+    "nav": { "quickStart": "快速开始", "switchers": "使用内置切换器", "customize": "自定义组件外观", "themes": "主题预设与 TweakCN", "languages": "添加与修改语言" },
+    "quickStart": {
+      "title": "快速开始",
+      "description": "安装依赖并启动开发服务后，首页已经是一个可实际操作的展示与验收环境。",
+      "cards": {
+        "theme": { "title": "主题", "description": "选择预设色彩系统" },
+        "language": { "title": "语言", "description": "切换已配置的本地化文案" },
+        "mode": { "title": "模式", "description": "跟随系统或指定浅深色" }
+      }
+    },
+    "switchers": {
+      "title": "使用内置切换器",
+      "description": "三个组件都已连接持久化状态与相应的 Provider，可直接放入导航栏、设置页或侧栏。",
+      "theme": "用于选择预设主题。它会更新 Zustand 中的主题名称，并触发根视图过渡动画。",
+      "language": "用于切换 i18next 当前语言，语言选择会记住在浏览器本地存储中。",
+      "mode": "提供自动、浅色和深色三种模式；自动模式会跟随用户的操作系统偏好。"
+    },
+    "customize": {
+      "title": "自定义三个组件",
+      "description": "三个切换器都接收常用的按钮外观参数；主题模式组件还可以控制下拉菜单的对齐和提示位置。",
+      "note": "组件实现在"
+    },
+    "themes": {
+      "title": "修改或增加主题预设",
+      "description": "主题预设集中维护在一个文件中，并以 light / dark 两组语义化令牌描述颜色、阴影、圆角和字体。",
+      "tweakTitle": "使用 TweakCN 设计主题",
+      "tweakDescription": "在 TweakCN 中调整语义颜色，导出变量后，将对应值填入 light / dark 令牌即可。",
+      "tweakButton": "打开 TweakCN",
+      "steps": {
+        "1": "在 TweakCN 选择或编辑一套主题。",
+        "2": "将导出的颜色映射到 primary、background、card、border 等令牌。",
+        "3": "为浅色和深色模式都补齐需要覆盖的令牌，刷新页面即可在主题选择器中验证。"
+      }
+    },
+    "languages": {
+      "title": "修改或增加语言",
+      "description": "语言配置、可见名称与翻译文件分别独立维护，增加一个语言只需要补充配置和一份 JSON 文案。",
+      "note": "新增语言时，更新",
+      "fallback": "。未提供的键会回退到英文，因此建议复制"
+    },
+    "outro": "把模板当作你的基础层：产品功能可以不断变化，语言、主题与模式切换则持续保持一致。"
+  }
+}

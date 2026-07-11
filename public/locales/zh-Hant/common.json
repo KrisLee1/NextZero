@@ -1,0 +1,110 @@
+{
+  "language-select": {
+    "search-lang": "搜尋語言",
+    "no-found": "找不到語言"
+  },
+  "theme-select": {
+    "search-theme": "搜尋主題",
+    "no-found": "找不到主題"
+  },
+  "theme-mode-toggle": {
+    "auto": "自動",
+    "light": "淺色",
+    "dark": "深色"
+  },
+  "landing": {
+    "navigation": "主導覽",
+    "nav": { "features": "功能", "workflow": "使用方式", "demo": "即時展示", "docs": "文件" },
+    "controls": { "mode": "色彩模式" },
+    "eyebrow": "Next.js 多語言與主題基礎模板",
+    "hero": {
+      "title": "為 Next.js 專案預先配置多語言與主題能力。",
+      "description": "NextZero 內建 i18next 語言切換、主題預設、跟隨系統的深淺色模式和主題過渡動畫。你可以依產品需求擴展語言、設計令牌與切換元件。",
+      "primaryCta": "閱讀文件",
+      "secondaryCta": "在 GitHub 查看"
+    },
+    "stats": [
+      { "value": "∞", "label": "可持續擴展的語言" },
+      { "value": "16", "label": "內建主題預設" },
+      { "value": "3", "label": "自動、淺色與深色模式" }
+    ],
+    "demo": {
+      "kicker": "即時設定預覽",
+      "title": "語言、主題與模式協同運作",
+      "progressStart": "已設定", "progressEnd": "可繼續自訂",
+      "language": "語言", "languages": "依需求加入語言", "theme": "主題"
+    },
+    "features": {
+      "eyebrow": "一次建置，處處可用",
+      "title": "每個新應用程式都需要的適應層。",
+      "description": "讓使用者偏好、語言支援與視覺一致性成為起點的一部分，把時間留給真正的產品工作。",
+      "items": [
+        { "title": "預設支援多語言", "description": "本地化文案、瀏覽器語言偵測和語言選擇器都已連接完成。" },
+        { "title": "有性格的主題", "description": "選擇精心設計的色彩系統，讓所有設計令牌同步更新。" },
+        { "title": "可持續擴展的系統", "description": "語意化令牌、無障礙元件和響應式預設值，讓後續擴展更輕鬆。" }
+      ]
+    },
+    "workflow": {
+      "eyebrow": "從複製到產品",
+      "title": "為下一個介面準備的從容起點。",
+      "description": "把模板作為基線，然後把精力投入讓你的想法真正獨特的產品行為。",
+      "cta": "回到切換控制",
+      "steps": [
+        { "title": "選擇預設風格", "description": "從符合產品氣質的預設主題開始。" },
+        { "title": "加入你的文案", "description": "讓語言文案與功能同時誕生，而不是在後期補上。" },
+        { "title": "建構獨特體驗", "description": "隨著產品成長，持續保留語言與視覺偏好這一層。" }
+      ]
+    },
+    "footer": "為從第一天起就應該擁有個人化體驗的產品準備的可重複使用介面基礎。",
+    "footerItems": { "i18n": "支援國際化", "theme": "支援主題", "system": "適配系統" }
+  },
+  "docs": {
+    "navigation": "文件目錄",
+    "backHome": "回到首頁",
+    "mode": "主題模式",
+    "badge": "模板文件",
+    "title": "NextZero 使用指南",
+    "introduction": "NextZero 把多語言、主題預設和深淺色模式預先組合在一起。以下內容說明如何直接使用、客製元件，以及把它擴展為自己的設計系統。",
+    "nav": { "quickStart": "快速開始", "switchers": "使用內建切換器", "customize": "自訂元件外觀", "themes": "主題預設與 TweakCN", "languages": "新增與修改語言" },
+    "quickStart": {
+      "title": "快速開始",
+      "description": "安裝相依套件並啟動開發服務後，首頁已經是可實際操作的展示與驗證環境。",
+      "cards": {
+        "theme": { "title": "主題", "description": "選擇預設色彩系統" },
+        "language": { "title": "語言", "description": "切換已設定的本地化文案" },
+        "mode": { "title": "模式", "description": "跟隨系統或指定深淺色" }
+      }
+    },
+    "switchers": {
+      "title": "使用內建切換器",
+      "description": "三個元件都已連接持久化狀態與對應的 Provider，可直接放入導覽列、設定頁或側欄。",
+      "theme": "用於選擇預設主題。它會更新 Zustand 中的主題名稱，並觸發根視圖過渡動畫。",
+      "language": "用於切換 i18next 目前語言，語言選擇會記住在瀏覽器本機儲存中。",
+      "mode": "提供自動、淺色和深色三種模式；自動模式會跟隨使用者的作業系統偏好。"
+    },
+    "customize": {
+      "title": "自訂三個元件",
+      "description": "三個切換器都接受常用的按鈕外觀參數；主題模式元件還可以控制下拉選單的對齊和提示位置。",
+      "note": "元件實作於"
+    },
+    "themes": {
+      "title": "修改或新增主題預設",
+      "description": "主題預設集中維護在一個檔案中，並以 light / dark 兩組語意化令牌描述色彩、陰影、圓角和字型。",
+      "tweakTitle": "使用 TweakCN 設計主題",
+      "tweakDescription": "在 TweakCN 中調整語意色彩，匯出變數後，將對應值填入 light / dark 令牌即可。",
+      "tweakButton": "開啟 TweakCN",
+      "steps": {
+        "1": "在 TweakCN 選擇或編輯一套主題。",
+        "2": "將匯出的色彩對應到 primary、background、card、border 等令牌。",
+        "3": "為淺色和深色模式都補齊需要覆蓋的令牌，重新整理即可在主題選擇器中驗證。"
+      }
+    },
+    "languages": {
+      "title": "修改或新增語言",
+      "description": "語言設定、可見名稱與翻譯檔案分別獨立維護，新增一種語言只需要補充設定和一份 JSON 文案。",
+      "note": "新增語言時，更新",
+      "fallback": "。未提供的鍵會回退到英文，因此建議複製"
+    },
+    "outro": "把模板當作你的基礎層：產品功能可以不斷變化，語言、主題與模式切換則持續保持一致。"
+  }
+}

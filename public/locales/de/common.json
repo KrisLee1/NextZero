@@ -1,0 +1,14 @@
+{
+  "language-select": { "search-lang": "Sprache suchen", "no-found": "Keine Sprache gefunden." },
+  "theme-select": { "search-theme": "Theme suchen", "no-found": "Kein Theme gefunden." },
+  "theme-mode-toggle": { "auto": "Automatisch", "light": "Hell", "dark": "Dunkel" },
+  "landing": {
+    "navigation": "Hauptnavigation", "nav": { "features": "Funktionen", "workflow": "Ablauf", "demo": "Live-Demo", "docs": "Dokumentation" }, "controls": { "mode": "Farbmodus" }, "eyebrow": "Next.js-Starter für Sprachen und Themes",
+    "hero": { "title": "Eine wiederverwendbare Grundlage für Internationalisierung und Themes in Next.js.", "description": "NextZero enthält i18next-Sprachwechsel, Theme-Presets, systembewusste helle und dunkle Modi sowie Theme-Übergänge. Erweitere Locales, Tokens und Komponenten passend zu deinem Produkt.", "primaryCta": "Dokumentation lesen", "secondaryCta": "Auf GitHub ansehen" },
+    "stats": [ { "value": "∞", "label": "ergänzbare Locales" }, { "value": "16", "label": "integrierte Theme-Presets" }, { "value": "3", "label": "System-, Hell- und Dunkelmodus" } ],
+    "demo": { "kicker": "Live-Vorschau der Konfiguration", "title": "Sprache, Themes und Modi im Zusammenspiel", "progressStart": "Konfiguriert", "progressEnd": "Anpassbar", "language": "Sprache", "languages": "Benötigte Locales ergänzen", "theme": "Theme" },
+    "features": { "eyebrow": "Einmal bauen, überall nutzen", "title": "Die anpassungsfähige Ebene für jede neue App.", "description": "Mache Präferenzen, Sprache und visuelle Konsistenz zum Ausgangspunkt und konzentriere dich auf dein Produkt.", "items": [ { "title": "Mehrsprachig ab Werk", "description": "Lokalisierte Texte, Browser-Erkennung und eine Sprachauswahl sind bereits verbunden." }, { "title": "Themes mit Charakter", "description": "Wähle aus kuratierten Farbsystemen und aktualisiere alle Design-Tokens gemeinsam." }, { "title": "Ein skalierbares System", "description": "Semantische Tokens, zugängliche Komponenten und responsive Standards erleichtern Erweiterungen." } ] },
+    "workflow": { "eyebrow": "Vom Klon zum Produkt", "title": "Ein ruhiger Ausgangspunkt für dein nächstes Interface.", "description": "Nutze dieses Template als Basis und investiere deine Zeit in die Produktlogik, die deine Idee einzigartig macht.", "cta": "Zurück zu den Steuerelementen", "steps": [ { "title": "Standard auswählen", "description": "Starte mit einem Preset, das zum Charakter deines Produkts passt." }, { "title": "Texte hinzufügen", "description": "Lege Locale-Strings neben Funktionen ab, statt sie später nachzurüsten." }, { "title": "Das Einzigartige bauen", "description": "Behalte die Sprach- und Darstellungsebene bei, während dein Produkt wächst." } ] },
+    "footer": "Eine wiederverwendbare Interface-Grundlage für Produkte, die sich vom ersten Tag an persönlich anfühlen sollen.", "footerItems": { "i18n": "Internationalisiert", "theme": "Theme-fähig", "system": "Systembewusst" }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "language-select": { "search-lang": "언어 검색", "no-found": "언어를 찾을 수 없습니다" },
+  "theme-select": { "search-theme": "테마 검색", "no-found": "테마를 찾을 수 없습니다" },
+  "theme-mode-toggle": { "auto": "자동", "light": "라이트", "dark": "다크" },
+  "landing": {
+    "navigation": "기본 탐색", "nav": { "features": "기능", "workflow": "워크플로", "demo": "라이브 데모", "docs": "문서" }, "controls": { "mode": "색상 모드" }, "eyebrow": "Next.js 다국어·테마 스타터",
+    "hero": { "title": "Next.js를 위한 재사용 가능한 다국어·테마 기반.", "description": "NextZero에는 i18next 언어 전환, 테마 프리셋, 시스템 인식 라이트·다크 모드, 테마 전환 애니메이션이 포함되어 있습니다. 제품에 맞게 로케일, 토큰, 컴포넌트를 확장할 수 있습니다.", "primaryCta": "문서 읽기", "secondaryCta": "GitHub에서 보기" },
+    "stats": [ { "value": "∞", "label": "추가할 수 있는 로케일" }, { "value": "16", "label": "내장 테마 프리셋" }, { "value": "3", "label": "자동·라이트·다크 모드" } ],
+    "demo": { "kicker": "실시간 구성 미리보기", "title": "언어, 테마, 모드를 함께 관리", "progressStart": "구성 완료", "progressEnd": "사용자 지정 가능", "language": "언어", "languages": "필요한 로케일 추가", "theme": "테마" },
+    "features": { "eyebrow": "한 번 만들고, 어디서나 사용", "title": "모든 새 앱에 필요한 적응 레이어.", "description": "사용자 선호, 언어, 시각적 일관성을 시작점에 포함하여 제품 자체에 집중할 수 있습니다.", "items": [ { "title": "기본 다국어 지원", "description": "현지화 문구, 브라우저 언어 감지, 언어 선택기가 이미 연결되어 있습니다." }, { "title": "개성 있는 테마", "description": "정교한 색상 시스템을 선택하면 모든 디자인 토큰이 함께 바뀝니다." }, { "title": "확장 가능한 시스템", "description": "시맨틱 토큰, 접근 가능한 컴포넌트, 반응형 기본값이 확장을 쉽게 만듭니다." } ] },
+    "workflow": { "eyebrow": "클론에서 제품까지", "title": "다음 인터페이스를 위한 차분한 출발점.", "description": "이 템플릿을 기준점으로 삼고, 아이디어를 돋보이게 하는 제품 동작에 시간을 쓰세요.", "cta": "컨트롤로 돌아가기", "steps": [ { "title": "기본값 선택", "description": "제품의 성격에 맞는 프리셋으로 시작하세요." }, { "title": "문구 추가", "description": "나중에 보완하지 말고 기능과 함께 로케일 문자열을 배치하세요." }, { "title": "고유한 부분 만들기", "description": "제품이 성장해도 언어와 외관 레이어를 유지하세요." } ] },
+    "footer": "첫날부터 개인화된 느낌을 주어야 하는 제품을 위한 재사용 가능한 인터페이스 기반.", "footerItems": { "i18n": "국제화 지원", "theme": "테마 지원", "system": "시스템 인식" }
+  }
+}

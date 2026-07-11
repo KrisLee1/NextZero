@@ -1,0 +1,110 @@
+{ 
+  "language-select": {
+    "search-lang": "Search language",
+    "no-found": "No language found."
+  },
+  "theme-select": {
+    "search-theme": "Search theme",
+    "no-found": "No theme found."
+  },
+  "theme-mode-toggle": {
+    "auto": "Auto",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "landing": {
+    "navigation": "Main navigation",
+    "nav": { "features": "Features", "workflow": "Workflow", "demo": "Live demo", "docs": "Documentation" },
+    "controls": { "mode": "Color mode" },
+    "eyebrow": "Next.js language and theme starter",
+    "hero": {
+      "title": "Start your Next.js project with language and theme preferences in place.",
+      "description": "NextZero is a ready-to-run Next.js template that demonstrates how to integrate internationalization, theme presets, and appearance preferences. Choose and extend the languages and design tokens that fit your product.",
+      "primaryCta": "Read the documentation",
+      "secondaryCta": "View on GitHub"
+    },
+    "stats": [
+      { "value": "i18n", "label": "languages defined by your product" },
+      { "value": "26", "label": "available theme presets" },
+      { "value": "3", "label": "appearance: system, light, or dark" }
+    ],
+    "demo": {
+      "kicker": "Current configuration",
+      "title": "See language, theme, and mode in one interface",
+      "progressStart": "Current setting", "progressEnd": "Adjust anytime",
+      "language": "Language", "languages": "Configure and extend for your product", "theme": "Theme"
+    },
+    "features": {
+      "eyebrow": "Core preferences, ready to use",
+      "title": "Set up preferences once, then focus on the product.",
+      "description": "Keep language selection, theme tokens, and color modes in one configuration from the first day of the project.",
+      "items": [
+        { "title": "Internationalization", "description": "Language configuration, copy resources, browser-language detection, and an in-app picker are ready to adapt to your product." },
+        { "title": "Theme presets", "description": "Changing a preset updates colors, borders, shadows, radii, and other design tokens together." },
+        { "title": "An extensible base", "description": "Semantic tokens, accessible components, and responsive defaults make it easier to add your own design system." }
+      ]
+    },
+    "workflow": {
+      "eyebrow": "From template to product",
+      "title": "Start with clear defaults instead of rebuilding the basics.",
+      "description": "Decide how language, themes, and modes behave first, then put your time into the features and experience that differentiate the product.",
+      "cta": "Back to the controls",
+      "steps": [
+        { "title": "Choose a theme and mode", "description": "Start with a fitting preset and set system, light, or dark as the default mode." },
+        { "title": "Add product copy", "description": "Maintain product copy in the matching language files as the features evolve." },
+        { "title": "Extend the product", "description": "Build pages and features on top of the setup while preserving consistent language and appearance preferences." }
+      ]
+    },
+    "footer": "A reusable interface starting point for Next.js projects with language, theme, and color-mode preferences built in.",
+    "footerItems": { "i18n": "Internationalized", "theme": "Themeable", "system": "System-aware" }
+  },
+  "docs": {
+    "navigation": "Documentation",
+    "backHome": "Back home",
+    "mode": "Color mode",
+    "badge": "Template documentation",
+    "title": "Using NextZero",
+    "introduction": "NextZero brings internationalization, theme presets, and color modes together from the start. Learn how to use the included components and extend them into your own design system.",
+    "nav": { "quickStart": "Quick start", "switchers": "Built-in switchers", "customize": "Customize components", "themes": "Themes & TweakCN", "languages": "Add languages" },
+    "quickStart": {
+      "title": "Quick start",
+      "description": "After installing dependencies and starting the development server, the home page is a live environment for trying and validating every preference.",
+      "cards": {
+        "theme": { "title": "Theme", "description": "Choose a preset color system" },
+        "language": { "title": "Language", "description": "Switch localized copy" },
+        "mode": { "title": "Mode", "description": "Follow the system or choose light and dark" }
+      }
+    },
+    "switchers": {
+      "title": "Use the built-in switchers",
+      "description": "All three components are connected to persistent state and their providers, so they can be placed directly in a header, settings page, or sidebar.",
+      "theme": "Select a preset theme. It updates the theme name in Zustand and starts the root view-transition animation.",
+      "language": "Change the active i18next language. The choice is remembered in browser storage.",
+      "mode": "Offer system, light, and dark modes. System mode follows the operating-system preference."
+    },
+    "customize": {
+      "title": "Customize the three components",
+      "description": "Every switcher accepts familiar button appearance props. The mode switcher also controls menu alignment and tooltip placement.",
+      "note": "The components are implemented in"
+    },
+    "themes": {
+      "title": "Edit or add theme presets",
+      "description": "Theme presets live in one file. Their light and dark semantic tokens describe colors, shadows, radius, and fonts.",
+      "tweakTitle": "Design themes with TweakCN",
+      "tweakDescription": "Adjust semantic colors in TweakCN, export the variables, and map the values to the light and dark tokens.",
+      "tweakButton": "Open TweakCN",
+      "steps": {
+        "1": "Choose or edit a theme in TweakCN.",
+        "2": "Map exported colors to tokens such as primary, background, card, and border.",
+        "3": "Complete the tokens needed for both light and dark modes, then refresh and verify them in the theme picker."
+      }
+    },
+    "languages": {
+      "title": "Edit or add languages",
+      "description": "Language configuration, display names, and translation files are maintained separately. Adding a language only needs configuration and one JSON file.",
+      "note": "To add a language, update",
+      "fallback": " Missing keys fall back to English, so begin by copying"
+    },
+    "outro": "Treat the template as your foundation: product features can evolve while language, themes, and color-mode switching stay consistent."
+  }
+}
