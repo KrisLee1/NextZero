@@ -1,6 +1,9 @@
 import { ThemePreset, ThemeStyles } from "@/types/theme";
 import { architects_daughter } from "@/styles/fonts";
 
+// Some preset data was exported from or adapted from TweakCN and then adjusted
+// for NextZero. See THIRD_PARTY_NOTICES.md for attribution and license terms.
+
 // 注入字体
 architects_daughter.variable;
 

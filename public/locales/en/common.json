@@ -91,7 +91,7 @@
       "title": "Edit or add theme presets",
       "description": "Theme presets live in one file. Their light and dark semantic tokens describe colors, shadows, radius, and fonts.",
       "tweakTitle": "Design themes with TweakCN",
-      "tweakDescription": "Adjust semantic colors in TweakCN, export the variables, and map the values to the light and dark tokens.",
+      "tweakDescription": "Adjust semantic colors in TweakCN, export the variables, and map the values to the light and dark tokens. Some included preset data was exported from or adapted from TweakCN and is listed under Apache-2.0 in THIRD_PARTY_NOTICES.md.",
       "tweakButton": "Open TweakCN",
       "steps": {
         "1": "Choose or edit a theme in TweakCN.",

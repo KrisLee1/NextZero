@@ -52,4 +52,11 @@ npm run build
 
 ## License
 
-Private project. Add a license before publishing or distributing the project.
+This project is licensed under the [MIT License](./LICENSE).
+
+## Third-party notices
+
+Some theme preset data in `lib/theme-presets.ts` was exported from or adapted
+from [TweakCN](https://tweakcn.com/), which is licensed under Apache-2.0. See
+[THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for the applicable notice
+and license text.

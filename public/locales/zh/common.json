@@ -91,7 +91,7 @@
       "title": "修改或增加主题预设",
       "description": "主题预设集中维护在一个文件中，并以 light / dark 两组语义化令牌描述颜色、阴影、圆角和字体。",
       "tweakTitle": "使用 TweakCN 设计主题",
-      "tweakDescription": "在 TweakCN 中调整语义颜色，导出变量后，将对应值填入 light / dark 令牌即可。",
+      "tweakDescription": "在 TweakCN 中调整语义颜色，导出变量后，将对应值填入 light / dark 令牌即可。项目内部分预设数据由 TweakCN 导出或改编，按 Apache-2.0 许可证在 THIRD_PARTY_NOTICES.md 中声明。",
       "tweakButton": "打开 TweakCN",
       "steps": {
         "1": "在 TweakCN 选择或编辑一套主题。",
