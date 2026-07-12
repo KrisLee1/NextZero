@@ -12,6 +12,7 @@
     "light": "浅色",
     "dark": "深色"
   },
+  "meta": { "home": "首页", "docs": "文档" },
   "landing": {
     "navigation": "主导航",
     "nav": { "features": "功能", "workflow": "使用方式", "demo": "实时演示", "docs": "文档" },
@@ -33,6 +34,14 @@
       "title": "在一个界面中查看语言、主题与模式",
       "progressStart": "当前设置", "progressEnd": "可随时调整",
       "language": "语言", "languages": "按产品需要配置与扩展", "theme": "主题"
+    },
+    "themeGallery": {
+      "eyebrow": "主题探索",
+      "title": "在流动的主题画廊中，找到合适的风格。",
+      "description": "悬停即可暂停滚动；点击任一主题卡片会立即应用对应风格。",
+      "selected": "当前主题",
+      "choose": "应用 {{theme}} 主题",
+      "ariaLabel": "主题预设轮播"
     },
     "features": {
       "eyebrow": "开箱即用的基础能力",

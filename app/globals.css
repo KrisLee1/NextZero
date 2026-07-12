@@ -247,3 +247,46 @@
     opacity: 1;
   }
 }
+
+/* The duplicated marquee groups make the gallery loop without a visible jump.
+   Motion pauses on hover or keyboard-visible focus, not after a mouse click. */
+.theme-marquee {
+  overflow: hidden;
+  padding: 0.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.theme-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: theme-marquee 46s linear infinite;
+  will-change: transform;
+}
+
+.theme-marquee-track-reverse {
+  animation-direction: reverse;
+}
+
+.theme-marquee-group {
+  display: flex;
+  flex: none;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.theme-marquee:hover .theme-marquee-track,
+.theme-marquee:has(:focus-visible) .theme-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes theme-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-marquee-track {
+    animation-play-state: paused;
+  }
+}

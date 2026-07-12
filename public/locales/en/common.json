@@ -12,6 +12,7 @@
     "light": "Light",
     "dark": "Dark"
   },
+  "meta": { "home": "Home", "docs": "Documentation" },
   "landing": {
     "navigation": "Main navigation",
     "nav": { "features": "Features", "workflow": "Workflow", "demo": "Live demo", "docs": "Documentation" },
@@ -33,6 +34,14 @@
       "title": "See language, theme, and mode in one interface",
       "progressStart": "Current setting", "progressEnd": "Adjust anytime",
       "language": "Language", "languages": "Configure and extend for your product", "theme": "Theme"
+    },
+    "themeGallery": {
+      "eyebrow": "Theme playground",
+      "title": "Browse ready-to-use styles as they flow by.",
+      "description": "Hover to pause the gallery, then click any theme to apply it instantly.",
+      "selected": "Selected",
+      "choose": "Apply {{theme}} theme",
+      "ariaLabel": "Theme preset carousel"
     },
     "features": {
       "eyebrow": "Core preferences, ready to use",

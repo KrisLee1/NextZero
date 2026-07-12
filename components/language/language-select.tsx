@@ -5,7 +5,7 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Check, Languages, SearchX } from 'lucide-react';
 import { languageList } from '@/config/i18n.config';
 import { AnimatePresence, motion } from "motion/react";
@@ -20,6 +20,7 @@ export function LanguageSelect({
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const scrollPositionRef = useRef<{ x: number; y: number } | null>(null);
   
   function changeLanguage(lang: string) {
     window.localStorage.setItem('i18nextLng', lang);
@@ -38,7 +39,19 @@ export function LanguageSelect({
 
     if (nextOpen) {
       setSearchQuery("");
+      const scrollPosition = scrollPositionRef.current;
+
+      if (scrollPosition) {
+        requestAnimationFrame(() => {
+          window.scrollTo(scrollPosition.x, scrollPosition.y);
+          requestAnimationFrame(() => window.scrollTo(scrollPosition.x, scrollPosition.y));
+        });
+      }
     }
+  }
+
+  function captureScrollPosition() {
+    scrollPositionRef.current = { x: window.scrollX, y: window.scrollY };
   }
 
   return (
@@ -46,6 +59,9 @@ export function LanguageSelect({
       <PopoverTrigger
         role="combobox"
         aria-expanded={open}
+        onMouseDown={(event) => event.preventDefault()}
+        onPointerEnter={captureScrollPosition}
+        onPointerDownCapture={captureScrollPosition}
         className={cn(
           buttonVariants({ variant, className }),
           "cursor-pointer select-none whitespace-nowrap",
@@ -56,7 +72,7 @@ export function LanguageSelect({
             {languageList.find((lang) => lang.code === i18n.language)?.label}
           </span>
       </PopoverTrigger>
-      <PopoverContent className="w-[180px] p-0">
+      <PopoverContent initialFocus={false} finalFocus={false} className="w-[180px] p-0">
         <Command>
           <CommandInput 
             className='truncate' 

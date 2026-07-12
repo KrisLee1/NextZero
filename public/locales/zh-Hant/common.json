@@ -12,6 +12,7 @@
     "light": "淺色",
     "dark": "深色"
   },
+  "meta": { "home": "首頁", "docs": "文件" },
   "landing": {
     "navigation": "主導覽",
     "nav": { "features": "功能", "workflow": "使用方式", "demo": "即時展示", "docs": "文件" },
@@ -33,6 +34,14 @@
       "title": "語言、主題與模式協同運作",
       "progressStart": "已設定", "progressEnd": "可繼續自訂",
       "language": "語言", "languages": "依需求加入語言", "theme": "主題"
+    },
+    "themeGallery": {
+      "eyebrow": "主題探索",
+      "title": "在流動的主題畫廊中，找到合適的風格。",
+      "description": "將游標停留在畫廊上即可暫停捲動；點選任一主題卡片會立即套用對應風格。",
+      "selected": "目前主題",
+      "choose": "套用 {{theme}} 主題",
+      "ariaLabel": "主題預設輪播"
     },
     "features": {
       "eyebrow": "一次建置，處處可用",

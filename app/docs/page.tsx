@@ -37,6 +37,7 @@ export default function DocsPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <title>{`${t("meta.docs")} | NextZero`}</title>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
           <a href="/" className="text-base font-bold tracking-tight sm:text-lg" aria-label="NextZero home">

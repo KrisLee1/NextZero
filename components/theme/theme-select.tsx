@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
+import { useMemo, useRef, useState, type PointerEvent } from "react";
 import { getThemeStyles, themePresets } from "@/lib/theme-presets";
 import { useTheme } from "next-themes"
 import { ThemeMode } from "@/types/theme";
@@ -54,6 +54,7 @@ export function ThemeSelect({
   const { resolvedTheme } = useTheme();
   const themeSelectRef = useRef<HTMLButtonElement>(null);
   const transitionOriginRef = useRef<{ clientX: number; clientY: number } | null>(null);
+  const scrollPositionRef = useRef<{ x: number; y: number } | null>(null);
   const themeName = useThemeStore(s => s.themeName);
   const setThemeName = useThemeStore(s => s.setThemeName);
   const { t } = useTranslation();
@@ -61,7 +62,7 @@ export function ThemeSelect({
     return Object.keys(themePresets).sort((a, b) => {
       return a.localeCompare(b);
     });
-  },[themePresets]);
+  }, []);
 
   // 过滤主题名称
   const filteredThemeNames = useMemo(() => {
@@ -71,11 +72,25 @@ export function ThemeSelect({
     );
   }, [themeNames, searchQuery]);
 
-  useEffect(() => {
-    if (open) {
+  function handleOpenChange(nextOpen: boolean) {
+    setOpen(nextOpen);
+
+    if (nextOpen) {
       setSearchQuery("");
+      const scrollPosition = scrollPositionRef.current;
+
+      if (scrollPosition) {
+        requestAnimationFrame(() => {
+          window.scrollTo(scrollPosition.x, scrollPosition.y);
+          requestAnimationFrame(() => window.scrollTo(scrollPosition.x, scrollPosition.y));
+        });
+      }
     }
-  }, [open])
+  }
+
+  function captureScrollPosition() {
+    scrollPositionRef.current = { x: window.scrollX, y: window.scrollY };
+  }
 
   function changeTheme(themeName: string) {
     setThemeTransitionOrigin(transitionOriginRef.current, themeSelectRef.current);
@@ -92,10 +107,13 @@ export function ThemeSelect({
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={handleOpenChange}>
       <PopoverTrigger
         role="combobox"
         aria-expanded={open}
+        onMouseDown={(event) => event.preventDefault()}
+        onPointerEnter={captureScrollPosition}
+        onPointerDownCapture={captureScrollPosition}
         className={cn(
           buttonVariants({ variant, className }),
           "w-auto justify-between cursor-pointer select-none",
@@ -106,9 +124,9 @@ export function ThemeSelect({
           {/* <ThemeColors themeName={themeName} mode={resolvedTheme as ThemeMode} /> */}
           {themeName
             ? themePresets[themeName].label
-            : "Default"}
+            : "Glass"}
       </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
+      <PopoverContent initialFocus={false} finalFocus={false} className="w-auto p-0">
         <Command>
           <CommandInput 
             placeholder={t('theme-select.search-theme')} 

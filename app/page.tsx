@@ -15,6 +15,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { LanguageSelect } from "@/components/language/language-select";
 import { ThemeModeToggle } from "@/components/theme/theme-mode-toggle";
+import { ThemeCarousel } from "@/components/theme/theme-carousel";
 import { ThemeSelect } from "@/components/theme/theme-select";
 import { themePresets } from "@/lib/theme-presets";
 
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-background text-foreground">
+      <title>{`${t("meta.home")} | NextZero`}</title>
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] overflow-hidden">
         <div className="absolute left-[8%] top-[-12rem] size-[26rem] rounded-full bg-primary/18 blur-3xl" />
         <div className="absolute right-[-8rem] top-20 size-[22rem] rounded-full bg-chart-2/15 blur-3xl" />
@@ -148,6 +150,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <ThemeCarousel />
 
         <section id="features" className="scroll-mt-8 pt-28 sm:pt-36">
           <div className="max-w-xl">
