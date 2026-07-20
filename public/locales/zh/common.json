@@ -15,7 +15,7 @@
   "meta": { "home": "首页", "docs": "文档" },
   "landing": {
     "navigation": "主导航",
-    "nav": { "features": "功能", "workflow": "使用方式", "demo": "实时演示", "docs": "文档" },
+    "nav": { "features": "功能", "workflow": "使用方式", "demo": "实时演示", "docs": "文档", "editor": "主题编辑器" },
     "controls": { "mode": "颜色模式" },
     "eyebrow": "Next.js 多语言与主题启动模板",
     "hero": {
@@ -70,11 +70,12 @@
   "docs": {
     "navigation": "文档目录",
     "backHome": "返回首页",
+    "themeEditor": "主题编辑器",
     "mode": "主题模式",
     "badge": "模板文档",
     "title": "NextZero 使用指南",
     "introduction": "NextZero 把多语言、主题预设和浅深色模式预先组合在一起。下面的内容说明如何直接使用、定制组件，以及把它扩展为自己的设计系统。",
-    "nav": { "quickStart": "快速开始", "switchers": "使用内置切换器", "customize": "自定义组件外观", "themes": "主题预设与 TweakCN", "languages": "添加与修改语言" },
+    "nav": { "quickStart": "快速开始", "switchers": "使用内置切换器", "customize": "自定义组件外观", "themes": "主题预设与 OriaTheme", "languages": "添加与修改语言" },
     "quickStart": {
       "title": "快速开始",
       "description": "安装依赖并启动开发服务后，首页已经是一个可实际操作的展示与验收环境。",
@@ -87,7 +88,7 @@
     "switchers": {
       "title": "使用内置切换器",
       "description": "三个组件都已连接持久化状态与相应的 Provider，可直接放入导航栏、设置页或侧栏。",
-      "theme": "用于选择预设主题。它会更新 Zustand 中的主题名称，并触发根视图过渡动画。",
+      "theme": "用于选择 OriaTheme 预设主题。主题选择由 OriaTheme 持久化，并触发根视图过渡动画。",
       "language": "用于切换 i18next 当前语言，语言选择会记住在浏览器本地存储中。",
       "mode": "提供自动、浅色和深色三种模式；自动模式会跟随用户的操作系统偏好。"
     },
@@ -98,13 +99,13 @@
     },
     "themes": {
       "title": "修改或增加主题预设",
-      "description": "主题预设集中维护在一个文件中，并以 light / dark 两组语义化令牌描述颜色、阴影、圆角和字体。",
-      "tweakTitle": "使用 TweakCN 设计主题",
-      "tweakDescription": "在 TweakCN 中调整语义颜色，导出变量后，将对应值填入 light / dark 令牌即可。项目内部分预设数据由 TweakCN 导出或改编，按 Apache-2.0 许可证在 THIRD_PARTY_NOTICES.md 中声明。",
-      "tweakButton": "打开 TweakCN",
+      "description": "OriaTheme 提供开箱即用的主题预设，并负责本模板的主题运行时。",
+      "oriaTitle": "使用 OriaTheme 探索主题",
+      "oriaDescription": "可在 OriaTheme 浏览主题，并在本项目中使用其预设包。OriaTheme 采用 Apache-2.0 许可证，适用的声明与许可证文本见 THIRD_PARTY_NOTICES.md。",
+      "oriaButton": "打开 OriaTheme",
       "steps": {
-        "1": "在 TweakCN 选择或编辑一套主题。",
-        "2": "将导出的颜色映射到 primary、background、card、border 等令牌。",
+        "1": "使用 OriaTheme 选择或定制一套主题。",
+        "2": "将主题值映射到 primary、background、card、border 等令牌。",
         "3": "为浅色和深色模式都补齐需要覆盖的令牌，刷新页面即可在主题选择器中验证。"
       }
     },
@@ -115,5 +116,32 @@
       "fallback": "。未提供的键会回退到英文，因此建议复制"
     },
     "outro": "把模板当作你的基础层：产品功能可以不断变化，语言、主题与模式切换则持续保持一致。"
+  },
+  "editor": {
+    "pageTitle": "主题编辑器 | NextZero", "documentation": "文档", "rootLabel": "主题编辑器",
+    "status": { "paused": "预览已暂停 · {{count}} 个问题", "unavailable": "预览不可用", "unsaved": "正在预览 · 未保存", "saved": "正在预览 · 已保存" },
+    "tabs": { "themes": "主题", "colors": "颜色", "typography": "排版", "layout": "布局与形状", "depth": "层次与材质", "motion": "动效" },
+    "panels": {
+      "canvas": "画布与表面", "primary": "主色", "secondary": "次要色", "muted-accent": "柔和与强调", "feedback": "反馈", "borders": "边框与选中", "charts": "图表",
+      "font-families": "字体族", "font-weights": "字重", "type-scale": "字号比例", "line-height": "行高", "letter-spacing": "字间距",
+      "spacing": "间距与密度", "control": "控件尺寸", "radius": "圆角比例", "borders-focus": "边框与焦点环",
+      "elevation": "层级比例", "inner": "内阴影与高光", "opacity": "不透明度", "blur": "模糊", "backdrop": "背景", "gradients": "渐变", "duration": "时长比例", "easing": "缓动曲线"
+    },
+    "save": "保存", "saved": "主题已保存。", "externalChanges": "检测到外部更改。", "fixErrors": "请先修复校验错误再保存。", "themeName": "主题名称", "close": "关闭编辑器", "draftTools": "草稿工具", "searchTokens": "搜索所有主题令牌", "searchPlaceholder": "搜索名称、路径或用途", "noTokens": "没有令牌匹配“{{query}}”。", "themeCategories": "主题分类", "issues": "{{count}} 个问题",
+    "lightMode": "浅色模式", "darkMode": "深色模式", "editingMode": "编辑模式",
+    "closeDiscardTitle": "关闭编辑器并放弃更改？", "closeDiscardDescription": "未保存的主题编辑将会丢失，最近一次保存的主题仍会保留。", "discardClose": "放弃并关闭", "discardTitle": "放弃未保存的更改？", "discardDescription": "未保存的主题编辑将会丢失。", "discardChanges": "放弃更改", "cancel": "取消",
+    "myThemes": "我的主题", "presets": "预设", "customThemesEmpty": "你保存或复制的自定义主题会出现在这里。", "presetsEmpty": "没有可用的预设主题。", "runtimeRequired": "主题管理需要运行时环境。", "themeActionFailed": "无法完成主题操作。", "renameFailed": "无法重命名主题。", "copyName": "{{name}} 副本", "copyNameNumber": "{{name}} 副本 {{number}}",
+    "deleteThemeTitle": "删除 {{name}}？", "themeActionTitle": "{{action}}{{name}}？", "deleteThemeDescription": "此自定义主题将被永久移除。如果它处于启用状态，OriaTheme 将恢复为默认主题。", "themeActionDescription": "继续操作会丢弃当前草稿中未保存的编辑。", "deleteTheme": "删除主题", "discardContinue": "放弃并继续", "copy": "复制", "edit": "编辑", "apply": "应用",
+    "customTheme": "自定义主题", "preset": "预设", "active": "当前", "activeTheme": "当前主题", "applyTheme": "应用 {{name}}", "activeThemeName": "{{name}} 当前正在使用", "renameTheme": "重命名 {{name}}", "editTheme": "编辑 {{name}}", "copyEditTheme": "复制并编辑 {{name}}", "deleteThemeName": "删除 {{name}}",
+    "reset": "重置", "resetDraft": "重置主题草稿", "resetMode": "重置{{mode}}", "resetEntire": "重置整个草稿", "resetTitle": "重置{{scope}}？", "resetDescription": "这会将{{scope}}恢复到已保存的基线，该范围内未保存的编辑将会丢失。", "modeScope": "{{mode}}模式", "entireDraft": "整个草稿", "draft": "草稿", "selectedScope": "所选范围",
+    "export": "导出", "copied": "已复制", "themeJsonCopied": "主题 JSON 已复制", "exportThemeJson": "导出主题 JSON", "copyJson": "复制 JSON", "downloadJson": "下载 JSON",
+    "import": "导入", "importThemeJson": "导入主题 JSON", "importAtomic": "原子导入", "importDescription": "选择一个 Oria 主题文件，或在下方粘贴 JSON。", "closeImport": "关闭导入", "themeFile": "主题文件", "chooseFile": "选择文件", "noFile": "未选择文件", "pasteJson": "或粘贴 JSON", "themeJson": "主题 JSON", "pasteTheme": "粘贴完整的 Oria 主题定义…", "importDraft": "导入到草稿", "fileReadError": "无法读取所选文件。", "imported": "已导入到未保存的草稿。", "invalidJson": "主题 JSON 无效。",
+    "noIssues": "没有问题", "noThemeIssues": "主题没有问题", "validation": "主题校验：{{label}}", "error": "错误", "warning": "警告", "passesValidation": "当前草稿已通过校验。", "errors": "{{count}} 个错误", "warnings": "{{count}} 个警告",
+    "baseColors": "基础颜色", "chooseStableColor": "为{{label}}选择稳定的颜色。", "chooseColor": "选择{{label}}", "colorCount": "{{count}} 个颜色", "colorDisplay": "颜色显示方式", "circleSwatches": "圆形色块", "compactScales": "紧凑色阶", "showCircleSwatches": "显示圆形色块", "showCompactScales": "显示紧凑色阶", "searchBaseColors": "搜索基础颜色", "searchColorsPlaceholder": "搜索色系、色阶或十六进制值", "chooseBaseColor": "从基础颜色库中为{{label}}选择颜色", "baseColorLibrary": "基础颜色库",
+    "preview": "预览", "effectPreview": "效果预览", "replay": "重新播放", "shadowLayers": "阴影层", "layer": "{{count}} 层", "addLayer": "添加阴影层", "shadowLayer": "第 {{count}} 层", "innerShadow": "内阴影", "outerShadow": "外阴影", "deleteLayer": "删除第 {{count}} 个阴影层", "deleteLayerTitle": "删除阴影层", "insetShadow": "内嵌阴影", "shadowLayersCount": "{{count}} 个阴影层",
+    "gradientNotSet": "未设置渐变", "createGradient": "创建渐变", "gradientType": "渐变类型", "unsetGradient": "取消设置{{label}}渐变", "unset": "取消设置", "gradientPreview": "{{type}}渐变预览", "colorStops": "颜色节点", "addColorStop": "添加颜色节点", "origin": "原点", "custom": "自定义", "repeat": "重复", "value": "值", "gradientOriginPresets": "渐变原点预设", "setGradientOrigin": "将渐变原点设为{{origin}}", "gradientOriginX": "渐变原点 X", "gradientOriginY": "渐变原点 Y", "chooseStopColor": "选择第 {{count}} 个节点颜色", "stopColor": "第 {{count}} 个节点颜色", "removeStop": "移除第 {{count}} 个节点", "removeStopTitle": "移除节点", "stopPosition": "第 {{count}} 个节点位置", "stopPositionValue": "第 {{count}} 个节点位置值", "type": "类型", "start": "起始", "angle": "角度", "gradientStartAngle": "渐变起始角度", "gradientAngle": "渐变角度", "gradientStartAngleValue": "渐变起始角度值", "gradientAngleValue": "渐变角度值",
+    "gradientTypes": { "linear": "线性", "repeating-linear": "重复线性", "radial": "径向", "repeating-radial": "重复径向", "conic": "圆锥" },
+    "gradientOrigins": { "top left": "左上", "top": "上方", "top right": "右上", "left": "左侧", "center": "中心", "right": "右侧", "bottom left": "左下", "bottom": "下方", "bottom right": "右下" },
+    "shadowFields": { "color": "颜色", "x": "X 偏移", "y": "Y 偏移", "blur": "模糊", "spread": "扩散" }
   }
 }

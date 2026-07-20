@@ -9,21 +9,18 @@ import {
   GitBranch,
   Layers3,
   Palette,
+  SlidersHorizontal,
   Sparkles,
   WandSparkles,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { LanguageSelect } from "@/components/language/language-select";
-import { ThemeModeToggle } from "@/components/theme/theme-mode-toggle";
-import { ThemeCarousel } from "@/components/theme/theme-carousel";
-import { ThemeSelect } from "@/components/theme/theme-select";
-import { themePresets } from "@/lib/theme-presets";
+import { OriaAppearanceSelect, OriaThemeSelect } from "@/components/oria/oria-theme-controls";
 
 const featureIcons = [Globe2, Palette, Layers3];
 
 export default function Home() {
   const { t } = useTranslation();
-  const themePresetCount = Object.keys(themePresets).length;
   const features = [0, 1, 2].map((index) => ({
     icon: featureIcons[index],
     title: t(`landing.features.items.${index}.title`),
@@ -46,6 +43,7 @@ export default function Home() {
 
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex" aria-label={t("landing.navigation")}>
             <a className="transition-colors hover:text-foreground" href="/docs">{t("landing.nav.docs")}</a>
+            <a className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground" href="/editor">{t("landing.nav.editor")} <SlidersHorizontal className="size-3.5" /></a>
             <a
               className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
               href="https://github.com/KrisLee1/NextZero"
@@ -56,25 +54,20 @@ export default function Home() {
             </a>
             <a
               className="inline-flex items-center gap-1.5 transition-colors hover:text-primary"
-              href="https://tweakcn.com/"
+              href="https://theme.oria.org.cn"
               target="_blank"
               rel="noreferrer"
             >
-              TweakCN <ExternalLink className="size-3.5" />
+              OriaTheme <ExternalLink className="size-3.5" />
             </a>
           </nav>
 
-          <div className="flex items-center rounded-xl border border-border/70 bg-card/70 p-1 shadow-sm backdrop-blur-md">
-            <ThemeSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
-            {/* <Separator orientation="vertical" /> */}
+          <div className="theme-elevation-sm flex items-center rounded-xl border border-border/70 bg-card/70 p-1 backdrop-blur-md">
+            <OriaThemeSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
             <LanguageSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
-            {/* <Separator orientation="vertical" /> */}
-            <ThemeModeToggle
+            <OriaAppearanceSelect
               variant="ghost"
               className="size-8 p-1 hover:shadow-none"
-              align="end"
-              tooltipSide="bottom"
-              tooltip={t("landing.controls.mode")}
             />
           </div>
         </div>
@@ -83,7 +76,7 @@ export default function Home() {
       <main id="top" className="mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pt-32 lg:pt-40">
         <section className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div className="max-w-2xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/75 px-3 py-1.5 text-xs font-medium shadow-sm backdrop-blur">
+            <div className="theme-elevation-xs mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/75 px-3 py-1.5 text-xs font-medium backdrop-blur">
               <Sparkles className="size-3.5 text-primary" />
               {t("landing.eyebrow")}
             </div>
@@ -94,11 +87,11 @@ export default function Home() {
               {t("landing.hero.description")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/docs" className="inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5">
+              <a href="/docs" className="theme-elevation-sm inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
                 {t("landing.hero.primaryCta")}
                 <ArrowRight className="size-4" />
               </a>
-              <a href="https://github.com/KrisLee1/NextZero" target="_blank" rel="noreferrer" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-card/70 px-4 text-sm font-semibold shadow-sm transition-colors hover:bg-muted">
+              <a href="https://github.com/KrisLee1/NextZero" target="_blank" rel="noreferrer" className="theme-elevation-sm inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-card/70 px-4 text-sm font-semibold transition-colors hover:bg-muted">
                 {t("landing.hero.secondaryCta")}
                 <GitBranch className="size-4" />
               </a>
@@ -107,7 +100,7 @@ export default function Home() {
               {[0, 1, 2].map((index) => (
                 <div key={index}>
                   <p className="text-xl font-semibold tracking-tight sm:text-2xl">
-                    {index === 1 ? themePresetCount : t(`landing.stats.${index}.value`)}
+                    {t(`landing.stats.${index}.value`)}
                   </p>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">{t(`landing.stats.${index}.label`)}</p>
                 </div>
@@ -117,13 +110,13 @@ export default function Home() {
 
           <div id="demo" className="relative mx-auto w-full max-w-[31rem]">
             <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-primary/15 blur-2xl" />
-            <div className="overflow-hidden rounded-2xl border border-border bg-card/90 p-3 shadow-2xl backdrop-blur-xl">
+            <div className="theme-elevation-md overflow-hidden rounded-2xl border border-border bg-card/90 p-3 backdrop-blur-xl">
               <div className="flex items-center justify-between border-b border-border px-2 pb-3">
                 <div className="flex gap-1.5"><span className="size-2.5 rounded-full bg-destructive" /><span className="size-2.5 rounded-full bg-chart-1" /><span className="size-2.5 rounded-full bg-chart-2" /></div>
                 <span className="rounded-md bg-muted px-2 py-1 text-[10px] font-medium text-muted-foreground">nextzero.app</span>
               </div>
               <div className="space-y-4 p-3 pt-5">
-                <div className="rounded-xl bg-background p-4 shadow-sm ring-1 ring-border/70">
+                <div className="theme-elevation-xs rounded-xl bg-background p-4 ring-1 ring-border/70">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-medium text-muted-foreground">{t("landing.demo.kicker")}</p>
@@ -151,8 +144,6 @@ export default function Home() {
           </div>
         </section>
 
-        <ThemeCarousel />
-
         <section id="features" className="scroll-mt-8 pt-28 sm:pt-36">
           <div className="max-w-xl">
             <p className="text-sm font-semibold text-primary">{t("landing.features.eyebrow")}</p>
@@ -161,7 +152,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {features.map(({ icon: Icon, title, description }) => (
-              <article key={title} className="group rounded-2xl border border-border bg-card/75 p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
+              <article key={title} className="theme-elevation-card group rounded-2xl border border-border bg-card/75 p-6 hover:-translate-y-1">
                 <span className="grid size-10 place-items-center rounded-xl bg-primary/12 text-primary"><Icon className="size-5" /></span>
                 <h3 className="mt-6 text-lg font-semibold tracking-tight">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
@@ -171,7 +162,7 @@ export default function Home() {
         </section>
 
         <section id="workflow" className="scroll-mt-8 py-28 sm:py-36">
-          <div className="rounded-3xl border border-border bg-card/80 p-6 shadow-sm sm:p-10">
+          <div className="theme-elevation-md rounded-3xl border border-border bg-card/80 p-6 sm:p-10">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold text-primary">{t("landing.workflow.eyebrow")}</p>
@@ -183,7 +174,7 @@ export default function Home() {
               </div>
               <ol className="space-y-3">
                 {[0, 1, 2].map((index) => (
-                  <li key={index} className="flex gap-4 rounded-xl border border-border/80 bg-background/70 p-4">
+                  <li key={index} className="theme-elevation-xs flex gap-4 rounded-xl border border-border/80 bg-background/70 p-4">
                     <span className="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-xs font-bold text-primary-foreground">0{index + 1}</span>
                     <div><p className="font-semibold">{t(`landing.workflow.steps.${index}.title`)}</p><p className="mt-1 text-sm leading-6 text-muted-foreground">{t(`landing.workflow.steps.${index}.description`)}</p></div>
                   </li>

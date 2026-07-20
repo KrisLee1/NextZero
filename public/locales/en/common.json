@@ -15,7 +15,7 @@
   "meta": { "home": "Home", "docs": "Documentation" },
   "landing": {
     "navigation": "Main navigation",
-    "nav": { "features": "Features", "workflow": "Workflow", "demo": "Live demo", "docs": "Documentation" },
+    "nav": { "features": "Features", "workflow": "Workflow", "demo": "Live demo", "docs": "Documentation", "editor": "Theme editor" },
     "controls": { "mode": "Color mode" },
     "eyebrow": "Next.js language and theme starter",
     "hero": {
@@ -70,11 +70,12 @@
   "docs": {
     "navigation": "Documentation",
     "backHome": "Back home",
+    "themeEditor": "Theme editor",
     "mode": "Color mode",
     "badge": "Template documentation",
     "title": "Using NextZero",
     "introduction": "NextZero brings internationalization, theme presets, and color modes together from the start. Learn how to use the included components and extend them into your own design system.",
-    "nav": { "quickStart": "Quick start", "switchers": "Built-in switchers", "customize": "Customize components", "themes": "Themes & TweakCN", "languages": "Add languages" },
+    "nav": { "quickStart": "Quick start", "switchers": "Built-in switchers", "customize": "Customize components", "themes": "Themes & OriaTheme", "languages": "Add languages" },
     "quickStart": {
       "title": "Quick start",
       "description": "After installing dependencies and starting the development server, the home page is a live environment for trying and validating every preference.",
@@ -87,7 +88,7 @@
     "switchers": {
       "title": "Use the built-in switchers",
       "description": "All three components are connected to persistent state and their providers, so they can be placed directly in a header, settings page, or sidebar.",
-      "theme": "Select a preset theme. It updates the theme name in Zustand and starts the root view-transition animation.",
+      "theme": "Select an OriaTheme preset. The choice is persisted by OriaTheme and starts the root view-transition animation.",
       "language": "Change the active i18next language. The choice is remembered in browser storage.",
       "mode": "Offer system, light, and dark modes. System mode follows the operating-system preference."
     },
@@ -98,13 +99,13 @@
     },
     "themes": {
       "title": "Edit or add theme presets",
-      "description": "Theme presets live in one file. Their light and dark semantic tokens describe colors, shadows, radius, and fonts.",
-      "tweakTitle": "Design themes with TweakCN",
-      "tweakDescription": "Adjust semantic colors in TweakCN, export the variables, and map the values to the light and dark tokens. Some included preset data was exported from or adapted from TweakCN and is listed under Apache-2.0 in THIRD_PARTY_NOTICES.md.",
-      "tweakButton": "Open TweakCN",
+      "description": "OriaTheme provides ready-to-use preset themes and controls the theme runtime for this starter.",
+      "oriaTitle": "Explore themes with OriaTheme",
+      "oriaDescription": "Browse OriaTheme and use its preset packages in this project. OriaTheme is licensed under Apache-2.0; see THIRD_PARTY_NOTICES.md for the applicable notice and license text.",
+      "oriaButton": "Open OriaTheme",
       "steps": {
-        "1": "Choose or edit a theme in TweakCN.",
-        "2": "Map exported colors to tokens such as primary, background, card, and border.",
+        "1": "Choose or customize a theme with OriaTheme.",
+        "2": "Map the theme values to tokens such as primary, background, card, and border.",
         "3": "Complete the tokens needed for both light and dark modes, then refresh and verify them in the theme picker."
       }
     },
@@ -115,5 +116,35 @@
       "fallback": " Missing keys fall back to English, so begin by copying"
     },
     "outro": "Treat the template as your foundation: product features can evolve while language, themes, and color-mode switching stay consistent."
+  },
+  "editor": {
+    "pageTitle": "Theme editor | NextZero",
+    "documentation": "Documentation",
+    "rootLabel": "Theme editor",
+    "status": { "paused": "Preview paused · {{count}} issues", "unavailable": "Preview unavailable", "unsaved": "Previewing · Unsaved", "saved": "Previewing · Saved" },
+    "tabs": { "themes": "Themes", "colors": "Colors", "typography": "Typography", "layout": "Layout & Shape", "depth": "Depth & Material", "motion": "Motion" },
+    "panels": {
+      "canvas": "Canvas & Surfaces", "primary": "Primary", "secondary": "Secondary", "muted-accent": "Muted & Accent", "feedback": "Feedback", "borders": "Borders & Selection", "charts": "Charts",
+      "font-families": "Font Families", "font-weights": "Font Weights", "type-scale": "Type Scale", "line-height": "Line Height", "letter-spacing": "Letter Spacing",
+      "spacing": "Spacing & Density", "control": "Control Size", "radius": "Radius Scale", "borders-focus": "Borders & Focus Ring",
+      "elevation": "Elevation Scale", "inner": "Inner Shadows & Highlights", "opacity": "Opacity", "blur": "Blur", "backdrop": "Backdrop", "gradients": "Gradients", "duration": "Duration Scale", "easing": "Easing Curves"
+    },
+    "save": "Save", "saved": "Theme saved.", "externalChanges": "External changes detected.", "fixErrors": "Fix validation errors before saving.",
+    "themeName": "Theme name", "close": "Close editor", "draftTools": "Draft tools", "searchTokens": "Search all theme tokens", "searchPlaceholder": "Search names, paths, or roles", "noTokens": "No tokens match “{{query}}”.", "themeCategories": "Theme categories", "issues": "{{count}} issues",
+    "lightMode": "Light mode", "darkMode": "Dark mode", "editingMode": "Editing mode",
+    "closeDiscardTitle": "Close editor and discard changes?", "closeDiscardDescription": "Your unsaved theme edits will be lost. The last saved theme will remain available.", "discardClose": "Discard and close", "discardTitle": "Discard unsaved changes?", "discardDescription": "Your unsaved theme edits will be lost.", "discardChanges": "Discard changes", "cancel": "Cancel",
+    "myThemes": "My themes", "presets": "Presets", "customThemesEmpty": "Custom themes you save or copy will appear here.", "presetsEmpty": "No preset themes are available.", "runtimeRequired": "Theme management requires a runtime.", "themeActionFailed": "The theme action could not be completed.", "renameFailed": "The theme could not be renamed.", "copyName": "{{name}} Copy", "copyNameNumber": "{{name}} Copy {{number}}",
+    "deleteThemeTitle": "Delete {{name}}?", "themeActionTitle": "{{action}} {{name}}?", "deleteThemeDescription": "This custom theme will be permanently removed. If it is active, OriaTheme will return to the default theme.", "themeActionDescription": "Continuing will discard the unsaved edits in the current draft.", "deleteTheme": "Delete theme", "discardContinue": "Discard and continue", "copy": "Copy", "edit": "Edit", "apply": "Apply",
+    "customTheme": "Custom theme", "preset": "Preset", "active": "Active", "activeTheme": "Active theme", "applyTheme": "Apply {{name}}", "activeThemeName": "{{name}} is active", "renameTheme": "Rename {{name}}", "editTheme": "Edit {{name}}", "copyEditTheme": "Copy and edit {{name}}", "deleteThemeName": "Delete {{name}}",
+    "reset": "Reset", "resetDraft": "Reset theme draft", "resetMode": "Reset {{mode}} mode", "resetEntire": "Reset entire draft", "resetTitle": "Reset {{scope}}?", "resetDescription": "This restores {{scope}} to its saved baseline. Any unsaved edits in that scope will be lost.", "modeScope": "{{mode}} mode", "entireDraft": "the entire draft", "draft": "draft", "selectedScope": "the selected scope",
+    "export": "Export", "copied": "Copied", "themeJsonCopied": "Theme JSON copied", "exportThemeJson": "Export theme JSON", "copyJson": "Copy JSON", "downloadJson": "Download JSON",
+    "import": "Import", "importThemeJson": "Import theme JSON", "importAtomic": "Atomic import", "importDescription": "Choose an Oria theme file or paste its JSON below.", "closeImport": "Close import", "themeFile": "Theme file", "chooseFile": "Choose file", "noFile": "No file selected", "pasteJson": "or paste JSON", "themeJson": "Theme JSON", "pasteTheme": "Paste a complete Oria theme definition…", "importDraft": "Import to draft", "fileReadError": "The selected file could not be read.", "imported": "Imported into the unsaved draft.", "invalidJson": "Theme JSON is invalid.",
+    "noIssues": "No issues", "noThemeIssues": "No theme issues", "validation": "Theme validation: {{label}}", "error": "Error", "warning": "Warning", "passesValidation": "The current draft passes validation.", "errors": "{{count}} error", "warnings": "{{count}} warning",
+    "baseColors": "Base colors", "chooseStableColor": "Choose a stable color for {{label}}.", "chooseColor": "Choose {{label}}", "colorCount": "{{count}} color", "colorDisplay": "Color display", "circleSwatches": "Circle swatches", "compactScales": "Compact color scales", "showCircleSwatches": "Show circle swatches", "showCompactScales": "Show compact color scales", "searchBaseColors": "Search base colors", "searchColorsPlaceholder": "Search family, shade, or hex", "chooseBaseColor": "Choose {{label}} from the base color library", "baseColorLibrary": "Base color library",
+    "preview": "Preview", "effectPreview": "Effect preview", "replay": "Replay", "shadowLayers": "Shadow layers", "layer": "{{count}} layer", "addLayer": "Add layer", "shadowLayer": "Layer {{count}}", "innerShadow": "Inner shadow", "outerShadow": "Outer shadow", "deleteLayer": "Delete shadow layer {{count}}", "deleteLayerTitle": "Delete layer", "insetShadow": "Inset shadow", "shadowLayersCount": "{{count}} shadow layers",
+    "gradientNotSet": "Gradient not set", "createGradient": "Create gradient", "gradientType": "Gradient type", "unsetGradient": "Unset {{label}} gradient", "unset": "Unset", "gradientPreview": "{{type}} gradient preview", "colorStops": "Color stops", "addColorStop": "Add color stop", "origin": "Origin", "custom": "Custom", "repeat": "Repeat", "value": "value", "gradientOriginPresets": "Gradient origin presets", "setGradientOrigin": "Set gradient origin to {{origin}}", "gradientOriginX": "Gradient origin X", "gradientOriginY": "Gradient origin Y", "chooseStopColor": "Choose stop {{count}} color", "stopColor": "Stop {{count}} color", "removeStop": "Remove stop {{count}}", "removeStopTitle": "Remove stop", "stopPosition": "Stop {{count}} position", "stopPositionValue": "Stop {{count}} position value", "type": "Type", "start": "Start", "angle": "Angle", "gradientStartAngle": "Gradient start angle", "gradientAngle": "Gradient angle", "gradientStartAngleValue": "Gradient start angle value", "gradientAngleValue": "Gradient angle value",
+    "gradientTypes": { "linear": "Linear", "repeating-linear": "Repeating linear", "radial": "Radial", "repeating-radial": "Repeating radial", "conic": "Conic" },
+    "gradientOrigins": { "top left": "Top left", "top": "Top", "top right": "Top right", "left": "Left", "center": "Center", "right": "Right", "bottom left": "Bottom left", "bottom": "Bottom", "bottom right": "Bottom right" },
+    "shadowFields": { "color": "Color", "x": "X offset", "y": "Y offset", "blur": "Blur", "spread": "Spread" }
   }
 }

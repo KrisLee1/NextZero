@@ -11,11 +11,12 @@ import {
   MoonStar,
   Palette,
   Settings2,
+  SlidersHorizontal,
 } from "lucide-react";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { LanguageSelect } from "@/components/language/language-select";
-import { ThemeModeToggle } from "@/components/theme/theme-mode-toggle";
-import { ThemeSelect } from "@/components/theme/theme-select";
+import { OriaAppearanceSelect, OriaThemeSelect } from "@/components/oria/oria-theme-controls";
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -40,20 +41,23 @@ export default function DocsPage() {
       <title>{`${t("meta.docs")} | NextZero`}</title>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="/" className="text-base font-bold tracking-tight sm:text-lg" aria-label="NextZero home">
+          <Link href="/" className="text-base font-bold tracking-tight sm:text-lg" aria-label="NextZero home">
             Next<span className="text-primary">Zero</span>
-          </a>
+          </Link>
           <div className="flex items-center gap-2">
-            <a href="/" className="hidden items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:inline-flex">
+            <Link href="/" className="hidden items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:inline-flex">
               <ArrowLeft className="size-4" /> {t("docs.backHome")}
-            </a>
+            </Link>
+            <Link href="/editor" className="hidden items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:inline-flex">
+              <SlidersHorizontal className="size-4" /> {t("docs.themeEditor")}
+            </Link>
             <a href="https://github.com/KrisLee1/NextZero" target="_blank" rel="noreferrer" className="hidden size-8 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:grid" aria-label="NextZero on GitHub">
               <GitBranch className="size-4" />
             </a>
-            <div className="flex items-center rounded-xl border border-border/70 bg-card/70 p-1 shadow-sm backdrop-blur-md">
-              <ThemeSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
+            <div className="theme-elevation-sm flex items-center rounded-xl border border-border/70 bg-card/70 p-1 backdrop-blur-md">
+              <OriaThemeSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
               <LanguageSelect variant="ghost" className="h-8 bg-transparent px-2 text-xs hover:shadow-none sm:px-2.5" />
-              <ThemeModeToggle variant="ghost" className="size-8 p-1 hover:shadow-none" align="end" tooltipSide="bottom" tooltip={t("docs.mode")} />
+              <OriaAppearanceSelect variant="ghost" className="size-8 p-1 hover:shadow-none" />
             </div>
           </div>
         </div>
@@ -68,7 +72,7 @@ export default function DocsPage() {
         </aside>
 
         <article className="min-w-0 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-primary shadow-sm">
+          <div className="theme-elevation-xs inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-primary">
             <FileCode2 className="size-3.5" /> {t("docs.badge")}
           </div>
           <h1 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">{t("docs.title")}</h1>
@@ -85,7 +89,7 @@ export default function DocsPage() {
                 [t("docs.quickStart.cards.language.title"), t("docs.quickStart.cards.language.description")],
                 [t("docs.quickStart.cards.mode.title"), t("docs.quickStart.cards.mode.description")],
               ].map(([title, description]) => (
-                <div key={title} className="rounded-xl border border-border bg-card/70 p-4">
+                <div key={title} className="theme-elevation-xs rounded-xl border border-border bg-card/70 p-4">
                   <CheckCircle2 className="size-4 text-primary" />
                   <p className="mt-3 font-semibold">{title}</p>
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
@@ -97,24 +101,24 @@ export default function DocsPage() {
           <section id="switchers" className="scroll-mt-28 pt-20">
             <SectionTitle icon={Settings2} eyebrow="02 · COMPONENTS" title={t("docs.switchers.title")} description={t("docs.switchers.description")} />
             <div className="space-y-4">
-              <DocCard icon={Palette} title="ThemeSelect">
+              <DocCard icon={Palette} title="OriaThemeSelect">
                 {t("docs.switchers.theme")}
-                <CodeBlock>{'<ThemeSelect variant="ghost" className="h-8" />'}</CodeBlock>
+                <CodeBlock>{'<OriaThemeSelect variant="ghost" className="h-8" />'}</CodeBlock>
               </DocCard>
               <DocCard icon={Globe2} title="LanguageSelect">
                 {t("docs.switchers.language")}
                 <CodeBlock>{'<LanguageSelect variant="ghost" className="h-8" />'}</CodeBlock>
               </DocCard>
-              <DocCard icon={MoonStar} title="ThemeModeToggle">
+              <DocCard icon={MoonStar} title="OriaAppearanceSelect">
                 {t("docs.switchers.mode")}
-                <CodeBlock>{'<ThemeModeToggle variant="ghost" align="end" tooltip="主题模式" />'}</CodeBlock>
+                <CodeBlock>{'<OriaAppearanceSelect variant="ghost" className="size-8" />'}</CodeBlock>
               </DocCard>
             </div>
           </section>
 
           <section id="customize" className="scroll-mt-28 pt-20">
             <SectionTitle icon={Settings2} eyebrow="03 · CUSTOMIZE" title={t("docs.customize.title")} description={t("docs.customize.description")} />
-            <CodeBlock>{`<ThemeSelect
+            <CodeBlock>{`<OriaThemeSelect
   variant="outline"
   className="w-full justify-start"
 />
@@ -124,34 +128,29 @@ export default function DocsPage() {
   className="h-9"
 />
 
-<ThemeModeToggle
+<OriaAppearanceSelect
   variant="ghost"
-  align="end"
-  tooltipSide="bottom"
-  tooltip="切换主题模式"
+  className="size-8"
 />`}</CodeBlock>
             <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              {t("docs.customize.note")} <code>components/theme</code>、<code>components/language</code>、<code>components/ui/popover.tsx</code>、<code>components/ui/dropdown-menu.tsx</code> 与 <code>components/ui/command.tsx</code>。
+              {t("docs.customize.note")} <code>components/oria</code>、<code>components/language</code>、<code>components/ui/popover.tsx</code> 与 <code>components/ui/command.tsx</code>。
             </p>
           </section>
 
           <section id="themes" className="scroll-mt-28 pt-20">
             <SectionTitle icon={Palette} eyebrow="04 · THEMES" title={t("docs.themes.title")} description={t("docs.themes.description")} />
-            <CodeBlock>{`// lib/theme-presets.ts
-export const themePresets = {
-  "my-brand": {
-    label: "My Brand",
-    styles: {
-      light: { primary: "#4f46e5", background: "#f8fafc" },
-      dark: { primary: "#a5b4fc", background: "#111827" },
-    },
-  },
-}`}</CodeBlock>
+            <CodeBlock>{`import { OriaThemeProvider } from "@oriatheme/react";
+import { oriaPresetThemes } from "@oriatheme/presets";
+
+<OriaThemeProvider config={{
+  presets: oriaPresetThemes,
+  defaultThemeId: "oria-default",
+}} />`}</CodeBlock>
             <div className="mt-5 rounded-2xl border border-primary/25 bg-primary/8 p-5">
               <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-                <div><p className="font-semibold">{t("docs.themes.tweakTitle")}</p><p className="mt-1 text-sm leading-6 text-muted-foreground">{t("docs.themes.tweakDescription")}</p></div>
-                <a href="https://tweakcn.com/" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
-                  {t("docs.themes.tweakButton")} <ExternalLink className="size-4" />
+                <div><p className="font-semibold">{t("docs.themes.oriaTitle")}</p><p className="mt-1 text-sm leading-6 text-muted-foreground">{t("docs.themes.oriaDescription")}</p></div>
+                <a href="https://theme.oria.org.cn" target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+                  {t("docs.themes.oriaButton")} <ExternalLink className="size-4" />
                 </a>
               </div>
             </div>
@@ -204,7 +203,7 @@ function SectionTitle({ icon: Icon, eyebrow, title, description }: { icon: typeo
 
 function DocCard({ icon: Icon, title, children }: { icon: typeof Code2; title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-sm">
+    <div className="theme-elevation-card rounded-2xl border border-border bg-card/70 p-5">
       <div className="flex items-center gap-2 font-semibold"><span className="grid size-8 place-items-center rounded-lg bg-primary/10 text-primary"><Icon className="size-4" /></span>{title}</div>
       <div className="mt-3 text-sm leading-6 text-muted-foreground">{children}</div>
     </div>

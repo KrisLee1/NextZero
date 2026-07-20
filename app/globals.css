@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is([data-oria-mode="dark"] *));
 
 @theme inline {
   --color-logo-background: var(--logo-background);
@@ -69,14 +69,14 @@
   --blur-2xl: var(--blur-2xl);
   --blur-3xl: var(--blur-3xl);
 
-  --shadow-2xs: var(--shadow-highlight), var(--shadow-2xs);
-  --shadow-xs: var(--shadow-highlight), var(--shadow-xs);
-  --shadow-sm: var(--shadow-highlight), var(--shadow-sm);
-  --shadow: var(--shadow-highlight), var(--shadow);
-  --shadow-md: var(--shadow-highlight), var(--shadow-md);
-  --shadow-lg: var(--shadow-highlight), var(--shadow-lg);
-  --shadow-xl: var(--shadow-highlight), var(--shadow-xl);
-  --shadow-2xl: var(--shadow-highlight), var(--shadow-2xl);
+  --shadow-2xs: var(--oria-shadow-2xs);
+  --shadow-xs: var(--oria-shadow-xs);
+  --shadow-sm: var(--oria-shadow-sm);
+  --shadow: var(--oria-shadow);
+  --shadow-md: var(--oria-shadow-md);
+  --shadow-lg: var(--oria-shadow-lg);
+  --shadow-xl: var(--oria-shadow-xl);
+  --shadow-2xl: var(--oria-shadow-2xl);
 
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
@@ -88,57 +88,54 @@
 }
 
 :root {
-  --diffusion-x: 0px;
-  --diffusion-y: 0px;
-  --diffusion-radius: 150vmax;
+  --background: var(--oria-color-background, #ffffff);
+  --foreground: var(--oria-color-foreground, #252525);
+  --card: var(--oria-color-surface, #ffffff);
+  --card-foreground: var(--oria-color-surfaceForeground, #252525);
+  --popover: var(--oria-color-overlay, #ffffff);
+  --popover-foreground: var(--oria-color-overlayForeground, #252525);
+  --primary: var(--oria-color-primary, #343434);
+  --primary-foreground: var(--oria-color-primaryForeground, #fbfbfb);
+  --secondary: var(--oria-color-secondary, #f7f7f7);
+  --secondary-foreground: var(--oria-color-secondaryForeground, #343434);
+  --muted: var(--oria-color-muted, #f7f7f7);
+  --muted-foreground: var(--oria-color-mutedForeground, #8e8e8e);
+  --accent: var(--oria-color-accent, #f7f7f7);
+  --accent-foreground: var(--oria-color-accentForeground, #343434);
+  --destructive: var(--oria-color-destructive, #e93d3d);
+  --destructive-foreground: var(--oria-color-destructiveForeground, #ffffff);
+  --border: var(--oria-color-border, #ebebeb);
+  --input: var(--oria-color-input, #ebebeb);
+  --ring: var(--oria-color-ring, #b5b5b5);
 
-  --background: #ffffff;
-  --foreground: #252525;
-  --card: #ffffff;
-  --card-foreground: #252525;
-  --popover: #ffffff;
-  --popover-foreground: #252525;
-  --primary: #343434;
-  --primary-foreground: #fbfbfb;
-  --secondary: #f7f7f7;
-  --secondary-foreground: #343434;
-  --muted: #f7f7f7;
-  --muted-foreground: #8e8e8e;
-  --accent: #f7f7f7;
-  --accent-foreground: #343434;
-  --destructive: #e93d3d;
-  --destructive-foreground: #ffffff;
-  --border: #ebebeb;
-  --input: #ebebeb;
-  --ring: #b5b5b5;
+  --chart-1: var(--oria-color-chart1, #ebbf5e);
+  --chart-2: var(--oria-color-chart2, #54d3de);
+  --chart-3: var(--oria-color-chart3, #2440a7);
+  --chart-4: var(--oria-color-chart4, #d9efb8);
+  --chart-5: var(--oria-color-chart5, #dfec9c);
 
-  --chart-1: #ebbf5e;
-  --chart-2: #54d3de;
-  --chart-3: #2440a7;
-  --chart-4: #d9efb8;
-  --chart-5: #dfec9c;
+  --sidebar: var(--oria-color-surface, #fbfbfb);
+  --sidebar-foreground: var(--oria-color-foreground, #252525);
+  --sidebar-primary: var(--oria-color-primary, #343434);
+  --sidebar-primary-foreground: var(--oria-color-primaryForeground, #fbfbfb);
+  --sidebar-accent: var(--oria-color-accent, #f7f7f7);
+  --sidebar-accent-foreground: var(--oria-color-accentForeground, #343434);
+  --sidebar-border: var(--oria-color-border, #ebebeb);
+  --sidebar-ring: var(--oria-color-ring, #b5b5b5);
 
-  --sidebar: #fbfbfb;
-  --sidebar-foreground: #252525;
-  --sidebar-primary: #343434;
-  --sidebar-primary-foreground: #fbfbfb;
-  --sidebar-accent: #f7f7f7;
-  --sidebar-accent-foreground: #343434;
-  --sidebar-border: #ebebeb;
-  --sidebar-ring: #b5b5b5;
-  
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: var(--oria-typography-font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif);
+  --font-serif: var(--oria-typography-font-serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif);
+  --font-mono: var(--oria-typography-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
 
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --oria-shadow-highlight: var(--oria-elevation-shadow-highlight, transparent);
+  --oria-shadow-2xs: var(--oria-shadow-highlight), var(--oria-elevation-shadow-2xs, 0 1px 3px 0px hsl(0 0% 0% / 0.05));
+  --oria-shadow-xs: var(--oria-shadow-highlight), var(--oria-elevation-shadow-xs, 0 1px 3px 0px hsl(0 0% 0% / 0.05));
+  --oria-shadow-sm: var(--oria-shadow-highlight), var(--oria-elevation-shadow-sm, 0 1px 3px 0px hsl(0 0% 0% / 0.1));
+  --oria-shadow: var(--oria-shadow-highlight), var(--oria-elevation-shadow-sm, 0 1px 3px 0px hsl(0 0% 0% / 0.1));
+  --oria-shadow-md: var(--oria-shadow-highlight), var(--oria-elevation-shadow-md, 0 2px 4px -1px hsl(0 0% 0% / 0.1));
+  --oria-shadow-lg: var(--oria-shadow-highlight), var(--oria-elevation-shadow-lg, 0 4px 6px -1px hsl(0 0% 0% / 0.1));
+  --oria-shadow-xl: var(--oria-shadow-highlight), var(--oria-elevation-shadow-xl, 0 8px 10px -1px hsl(0 0% 0% / 0.1));
+  --oria-shadow-2xl: var(--oria-shadow-highlight), var(--oria-elevation-shadow-2xl, 0 1px 3px 0px hsl(0 0% 0% / 0.25));
 
   --blur-sm: 4px;
   --blur: 8px;
@@ -147,57 +144,9 @@
   --blur-xl: 24px;
   --blur-2xl: 40px;
   --blur-3xl: 64px;
-
-  --radius: 0.625rem;
+  --radius: var(--oria-shape-radius-md, 0.625rem);
   --spacing: 0.25rem;
-  --tracking-normal: 0em;
-}
-
-.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #09090b;
-  --card-foreground: #fafafa;
-  --popover: #09090b;
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --accent: #27272a;
-  --accent-foreground: #fafafa;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fef2f2;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #d4d4d8;
-  --chart-1: #2662d9;
-  --chart-2: #2eb88a;
-  --chart-3: #e88c30;
-  --chart-4: #af57db;
-  --chart-5: #e23670;
-  --sidebar: #18181b;
-  --sidebar-foreground: #f4f4f5;
-  --sidebar-primary: #1d4ed8;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #27272a;
-  --sidebar-accent-foreground: #f4f4f5;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #d4d4d8;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --tracking-normal: var(--oria-typography-letterSpacing-normal, 0em);
 }
 
 
@@ -213,80 +162,96 @@
   }
 }
 
-/* 定义视图过渡 */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+.theme-elevation-xs {
+  box-shadow: var(--oria-shadow-xs);
 }
 
-/* The root transition is sized to the viewport, not to the control that
-   triggered it. This keeps the clipping circle independent of popovers and
-   dropdowns, which are rendered in their own portals. */
-::view-transition-group(root) {
-  width: 100vw;
-  height: 100vh;
+.theme-elevation-sm {
+  box-shadow: var(--oria-shadow-sm);
 }
 
-::view-transition-old(root) {
-  z-index: 0;
+.theme-elevation-md {
+  box-shadow: var(--oria-shadow-md);
 }
 
-::view-transition-new(root) {
-  z-index: 1;
-  animation: enter-transition .5s ease-in-out;
+.theme-elevation-lg {
+  box-shadow: var(--oria-shadow-lg);
 }
 
-@keyframes enter-transition {
-  from {
-    clip-path: circle(0px at var(--diffusion-x) var(--diffusion-y));
-    opacity: .8;
-  }
-  to {
-    clip-path: circle(var(--diffusion-radius) at var(--diffusion-x) var(--diffusion-y));
-    opacity: 1;
-  }
+.theme-elevation-card {
+  box-shadow: var(--oria-shadow-sm);
+  transition: transform var(--oria-motion-duration-normal, 220ms) var(--oria-motion-easing-standard, ease), box-shadow var(--oria-motion-duration-normal, 220ms) var(--oria-motion-easing-standard, ease);
 }
 
-/* The duplicated marquee groups make the gallery loop without a visible jump.
-   Motion pauses on hover or keyboard-visible focus, not after a mouse click. */
-.theme-marquee {
-  overflow: hidden;
-  padding: 0.5rem 0;
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+.theme-elevation-card:hover {
+  box-shadow: var(--oria-shadow-md);
 }
 
-.theme-marquee-track {
+/* Mirrors the OriaTheme editor's search control for picker popovers. */
+.command-editor-search {
   display: flex;
-  width: max-content;
-  animation: theme-marquee 46s linear infinite;
-  will-change: transform;
+  align-items: center;
+  gap: var(--oria-spacing-2, 0.5rem);
+  min-height: var(--oria-control-height-md, 2.5rem);
+  margin: 0.5rem 0.5rem 0;
+  padding: 0 var(--oria-control-paddingInline-sm, 0.75rem);
+  color: var(--oria-color-mutedForeground, var(--muted-foreground));
+  background: color-mix(in srgb, var(--oria-color-surfaceRaised, var(--card)) 82%, var(--oria-color-background, var(--background)));
+  border: var(--oria-shape-borderWidth-default, 1px) solid color-mix(in srgb, var(--oria-color-border, var(--border)) 84%, transparent);
+  border-radius: var(--oria-shape-radius-md, var(--radius));
+  box-shadow: var(--oria-elevation-shadow-highlight, none), var(--oria-elevation-shadow-xs, none);
+  cursor: text;
+  transition: color var(--oria-motion-duration-fast, 150ms) var(--oria-motion-easing-standard, ease), background-color var(--oria-motion-duration-normal, 220ms) var(--oria-motion-easing-standard, ease), border-color var(--oria-motion-duration-fast, 150ms) var(--oria-motion-easing-standard, ease), box-shadow var(--oria-motion-duration-fast, 150ms) var(--oria-motion-easing-standard, ease);
 }
 
-.theme-marquee-track-reverse {
-  animation-direction: reverse;
+.command-editor-search:hover {
+  border-color: color-mix(in srgb, var(--oria-color-border, var(--border)) 56%, var(--oria-color-primary, var(--primary)) 44%);
 }
 
-.theme-marquee-group {
-  display: flex;
-  flex: none;
-  gap: 1rem;
-  padding-right: 1rem;
+.command-editor-search:focus-within {
+  color: var(--oria-color-primary, var(--primary));
+  background: var(--oria-color-surfaceRaised, var(--card));
+  border-color: var(--oria-color-primary, var(--primary));
+  box-shadow: 0 0 0 var(--oria-shape-focusRingWidth, 2px) color-mix(in srgb, var(--oria-color-ring, var(--ring)) 18%, transparent), var(--oria-elevation-shadow-highlight, none);
 }
 
-.theme-marquee:hover .theme-marquee-track,
-.theme-marquee:has(:focus-visible) .theme-marquee-track {
-  animation-play-state: paused;
+.command-editor-search > svg {
+  flex: 0 0 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
 }
 
-@keyframes theme-marquee {
-  to {
-    transform: translateX(-50%);
-  }
+.command-editor-search > [data-slot="command-input"] {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  min-height: 2.6rem;
+  padding: 0;
+  color: var(--oria-color-foreground, var(--foreground));
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  outline: 0;
+  appearance: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .theme-marquee-track {
-    animation-play-state: paused;
-  }
+.command-editor-search > [data-slot="command-input"],
+.command-editor-search > input[cmdk-input] {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.command-editor-search > [data-slot="command-input"]::placeholder {
+  color: color-mix(in srgb, var(--oria-color-mutedForeground, var(--muted-foreground)) 82%, transparent);
+  opacity: 1;
 }

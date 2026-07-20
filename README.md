@@ -8,6 +8,7 @@ NextZero is a Next.js starter for projects that need internationalization, theme
 - 26 theme presets driven by semantic CSS variables.
 - Three appearance preferences: follow the system, light, or dark.
 - Persistent language, theme, and appearance selections in browser storage.
+- A persistent `/editor` workspace for live OriaTheme token editing, import/export, and saving custom themes.
 - Responsive, accessible UI primitives and a documentation page.
 
 ## Start
@@ -23,11 +24,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```text
 app/                 Routes and global styles
-components/          Language, theme, and UI components
+components/          OriaTheme, language, and UI components
 config/              i18next configuration and language list
-lib/theme-presets.ts Theme tokens and preset definitions
 public/locales/      Translation resources
-store/               Persistent client-side theme state
 ```
 
 ## Customize languages
@@ -40,7 +39,7 @@ The language picker stores the chosen language in the browser and restores it on
 
 ## Customize themes
 
-Edit or add presets in `lib/theme-presets.ts`. Each preset defines semantic tokens for light and dark appearances, including colors, borders, shadows, and radii. The homepage reads the preset count from this file automatically.
+Configure the `OriaThemeProvider` in `components/providers.tsx` and use the presets exported by `@oriatheme/presets`. OriaTheme manages the semantic tokens for light and dark appearances, and the built-in picker reads its preset catalog automatically.
 
 ## Quality checks
 
@@ -56,7 +55,6 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## Third-party notices
 
-Some theme preset data in `lib/theme-presets.ts` was exported from or adapted
-from [TweakCN](https://tweakcn.com/), which is licensed under Apache-2.0. See
-[THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for the applicable notice
-and license text.
+This project uses [OriaTheme](https://theme.oria.org.cn) packages, which are
+licensed under Apache-2.0. See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)
+for the applicable notice and license text.
